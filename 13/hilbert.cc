@@ -63,16 +63,18 @@ void d(int i, int h) {
 
 int main() {
 	cout << "newpath" << endl;
-
-	cout << "520 520 moveto" << endl;	
-	a(1, 512);
-
-	cout << "520 520 moveto" << endl;	
-	a(3, 512/8);
-	
-	cout << "520 530 moveto" << endl;
-	cout << "-512 0 rlineto" << endl;
-	cout << "stroke" << endl;
+	int h = 512;
+	int x0 = 64 + h/2;
+	int y0 = 64 + h/2;
+	for(int i = 1; i<6; ++i) {
+	  h /=2;
+	  x0 += h/2;
+	  y0 += h/2;
+	  cout << x0 << " " << y0 << " moveto" << endl;
+	  a(i, h);
+	  // cout << i << " setlinewidth" << endl;
+	  cout << "stroke" << endl;
+	}
 	cout << "showpage" << endl;
 	
 	return 0;
