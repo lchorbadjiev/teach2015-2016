@@ -1,0 +1,11 @@
+
+
+
+1) Point - operator overloading
+2) Stack - динамичен, operator=, Stack(const Stack&)
+3) Rational - operator overloading
+4) задачата за 8-те царици
+5) String - http://lubo.elsys-bg.org/wp-content/uploads/2010/03/OOP01-string.pdf
+6) List - http://lubo.elsys-bg.org/wp-content/uploads/2009/05/oop03-list1.pdf, без шаблони
+
+
