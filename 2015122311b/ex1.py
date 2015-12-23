@@ -1,4 +1,4 @@
-
+# Book to read: Dive into Python: http://www.diveintopython3.net/
 
 i = 1.0
 print(i)
