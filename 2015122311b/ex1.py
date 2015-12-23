@@ -1,4 +1,6 @@
-# Book to read: Dive into Python: http://www.diveintopython3.net/
+# Book to read: 
+# 	Dive into Python: http://www.diveintopython3.net/
+#	Fluent Python: http://www.amazon.com/Fluent-Python-Luciano-Ramalho/dp/1491946008
 
 i = 1.0
 print(i)
