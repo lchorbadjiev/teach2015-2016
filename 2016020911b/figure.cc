@@ -116,7 +116,8 @@ int main() {
 		ostringstream style;
 		style << "stroke: red;"
 			  << "stroke-width: " << 0.1*i << "; "
-			  << "fill: rgb(" << i*2 << "," << i << ", " << i << ");";
+			  << "fill: rgb(" << i << "," << i << ", " << 3*i << ");"
+			  << "fill-opacity: " << 0.1 + i*.005 << ";";
 			  
 		pc->set_style(style.str());
 		d.add(pc);

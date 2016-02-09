@@ -1,52 +1,52 @@
 <svg>
-<circle cx="0" cy="0" r="0"  style="stroke: red;stroke-width: 0; fill: rgb(0,0, 0);" />
-<circle cx="10" cy="10" r="5"  style="stroke: red;stroke-width: 0.1; fill: rgb(2,1, 1);" />
-<circle cx="20" cy="20" r="10"  style="stroke: red;stroke-width: 0.2; fill: rgb(4,2, 2);" />
-<circle cx="30" cy="30" r="15"  style="stroke: red;stroke-width: 0.3; fill: rgb(6,3, 3);" />
-<circle cx="40" cy="40" r="20"  style="stroke: red;stroke-width: 0.4; fill: rgb(8,4, 4);" />
-<circle cx="50" cy="50" r="25"  style="stroke: red;stroke-width: 0.5; fill: rgb(10,5, 5);" />
-<circle cx="60" cy="60" r="30"  style="stroke: red;stroke-width: 0.6; fill: rgb(12,6, 6);" />
-<circle cx="70" cy="70" r="35"  style="stroke: red;stroke-width: 0.7; fill: rgb(14,7, 7);" />
-<circle cx="80" cy="80" r="40"  style="stroke: red;stroke-width: 0.8; fill: rgb(16,8, 8);" />
-<circle cx="90" cy="90" r="45"  style="stroke: red;stroke-width: 0.9; fill: rgb(18,9, 9);" />
-<circle cx="100" cy="100" r="50"  style="stroke: red;stroke-width: 1; fill: rgb(20,10, 10);" />
-<circle cx="110" cy="110" r="55"  style="stroke: red;stroke-width: 1.1; fill: rgb(22,11, 11);" />
-<circle cx="120" cy="120" r="60"  style="stroke: red;stroke-width: 1.2; fill: rgb(24,12, 12);" />
-<circle cx="130" cy="130" r="65"  style="stroke: red;stroke-width: 1.3; fill: rgb(26,13, 13);" />
-<circle cx="140" cy="140" r="70"  style="stroke: red;stroke-width: 1.4; fill: rgb(28,14, 14);" />
-<circle cx="150" cy="150" r="75"  style="stroke: red;stroke-width: 1.5; fill: rgb(30,15, 15);" />
-<circle cx="160" cy="160" r="80"  style="stroke: red;stroke-width: 1.6; fill: rgb(32,16, 16);" />
-<circle cx="170" cy="170" r="85"  style="stroke: red;stroke-width: 1.7; fill: rgb(34,17, 17);" />
-<circle cx="180" cy="180" r="90"  style="stroke: red;stroke-width: 1.8; fill: rgb(36,18, 18);" />
-<circle cx="190" cy="190" r="95"  style="stroke: red;stroke-width: 1.9; fill: rgb(38,19, 19);" />
-<circle cx="200" cy="200" r="100"  style="stroke: red;stroke-width: 2; fill: rgb(40,20, 20);" />
-<circle cx="210" cy="210" r="105"  style="stroke: red;stroke-width: 2.1; fill: rgb(42,21, 21);" />
-<circle cx="220" cy="220" r="110"  style="stroke: red;stroke-width: 2.2; fill: rgb(44,22, 22);" />
-<circle cx="230" cy="230" r="115"  style="stroke: red;stroke-width: 2.3; fill: rgb(46,23, 23);" />
-<circle cx="240" cy="240" r="120"  style="stroke: red;stroke-width: 2.4; fill: rgb(48,24, 24);" />
-<circle cx="250" cy="250" r="125"  style="stroke: red;stroke-width: 2.5; fill: rgb(50,25, 25);" />
-<circle cx="260" cy="260" r="130"  style="stroke: red;stroke-width: 2.6; fill: rgb(52,26, 26);" />
-<circle cx="270" cy="270" r="135"  style="stroke: red;stroke-width: 2.7; fill: rgb(54,27, 27);" />
-<circle cx="280" cy="280" r="140"  style="stroke: red;stroke-width: 2.8; fill: rgb(56,28, 28);" />
-<circle cx="290" cy="290" r="145"  style="stroke: red;stroke-width: 2.9; fill: rgb(58,29, 29);" />
-<circle cx="300" cy="300" r="150"  style="stroke: red;stroke-width: 3; fill: rgb(60,30, 30);" />
-<circle cx="310" cy="310" r="155"  style="stroke: red;stroke-width: 3.1; fill: rgb(62,31, 31);" />
-<circle cx="320" cy="320" r="160"  style="stroke: red;stroke-width: 3.2; fill: rgb(64,32, 32);" />
-<circle cx="330" cy="330" r="165"  style="stroke: red;stroke-width: 3.3; fill: rgb(66,33, 33);" />
-<circle cx="340" cy="340" r="170"  style="stroke: red;stroke-width: 3.4; fill: rgb(68,34, 34);" />
-<circle cx="350" cy="350" r="175"  style="stroke: red;stroke-width: 3.5; fill: rgb(70,35, 35);" />
-<circle cx="360" cy="360" r="180"  style="stroke: red;stroke-width: 3.6; fill: rgb(72,36, 36);" />
-<circle cx="370" cy="370" r="185"  style="stroke: red;stroke-width: 3.7; fill: rgb(74,37, 37);" />
-<circle cx="380" cy="380" r="190"  style="stroke: red;stroke-width: 3.8; fill: rgb(76,38, 38);" />
-<circle cx="390" cy="390" r="195"  style="stroke: red;stroke-width: 3.9; fill: rgb(78,39, 39);" />
-<circle cx="400" cy="400" r="200"  style="stroke: red;stroke-width: 4; fill: rgb(80,40, 40);" />
-<circle cx="410" cy="410" r="205"  style="stroke: red;stroke-width: 4.1; fill: rgb(82,41, 41);" />
-<circle cx="420" cy="420" r="210"  style="stroke: red;stroke-width: 4.2; fill: rgb(84,42, 42);" />
-<circle cx="430" cy="430" r="215"  style="stroke: red;stroke-width: 4.3; fill: rgb(86,43, 43);" />
-<circle cx="440" cy="440" r="220"  style="stroke: red;stroke-width: 4.4; fill: rgb(88,44, 44);" />
-<circle cx="450" cy="450" r="225"  style="stroke: red;stroke-width: 4.5; fill: rgb(90,45, 45);" />
-<circle cx="460" cy="460" r="230"  style="stroke: red;stroke-width: 4.6; fill: rgb(92,46, 46);" />
-<circle cx="470" cy="470" r="235"  style="stroke: red;stroke-width: 4.7; fill: rgb(94,47, 47);" />
-<circle cx="480" cy="480" r="240"  style="stroke: red;stroke-width: 4.8; fill: rgb(96,48, 48);" />
-<circle cx="490" cy="490" r="245"  style="stroke: red;stroke-width: 4.9; fill: rgb(98,49, 49);" />
+<circle cx="0" cy="0" r="0"  style="stroke: red;stroke-width: 0; fill: rgb(0,0, 0);fill-opacity: 0.1;" />
+<circle cx="10" cy="10" r="5"  style="stroke: red;stroke-width: 0.1; fill: rgb(1,1, 3);fill-opacity: 0.105;" />
+<circle cx="20" cy="20" r="10"  style="stroke: red;stroke-width: 0.2; fill: rgb(2,2, 6);fill-opacity: 0.11;" />
+<circle cx="30" cy="30" r="15"  style="stroke: red;stroke-width: 0.3; fill: rgb(3,3, 9);fill-opacity: 0.115;" />
+<circle cx="40" cy="40" r="20"  style="stroke: red;stroke-width: 0.4; fill: rgb(4,4, 12);fill-opacity: 0.12;" />
+<circle cx="50" cy="50" r="25"  style="stroke: red;stroke-width: 0.5; fill: rgb(5,5, 15);fill-opacity: 0.125;" />
+<circle cx="60" cy="60" r="30"  style="stroke: red;stroke-width: 0.6; fill: rgb(6,6, 18);fill-opacity: 0.13;" />
+<circle cx="70" cy="70" r="35"  style="stroke: red;stroke-width: 0.7; fill: rgb(7,7, 21);fill-opacity: 0.135;" />
+<circle cx="80" cy="80" r="40"  style="stroke: red;stroke-width: 0.8; fill: rgb(8,8, 24);fill-opacity: 0.14;" />
+<circle cx="90" cy="90" r="45"  style="stroke: red;stroke-width: 0.9; fill: rgb(9,9, 27);fill-opacity: 0.145;" />
+<circle cx="100" cy="100" r="50"  style="stroke: red;stroke-width: 1; fill: rgb(10,10, 30);fill-opacity: 0.15;" />
+<circle cx="110" cy="110" r="55"  style="stroke: red;stroke-width: 1.1; fill: rgb(11,11, 33);fill-opacity: 0.155;" />
+<circle cx="120" cy="120" r="60"  style="stroke: red;stroke-width: 1.2; fill: rgb(12,12, 36);fill-opacity: 0.16;" />
+<circle cx="130" cy="130" r="65"  style="stroke: red;stroke-width: 1.3; fill: rgb(13,13, 39);fill-opacity: 0.165;" />
+<circle cx="140" cy="140" r="70"  style="stroke: red;stroke-width: 1.4; fill: rgb(14,14, 42);fill-opacity: 0.17;" />
+<circle cx="150" cy="150" r="75"  style="stroke: red;stroke-width: 1.5; fill: rgb(15,15, 45);fill-opacity: 0.175;" />
+<circle cx="160" cy="160" r="80"  style="stroke: red;stroke-width: 1.6; fill: rgb(16,16, 48);fill-opacity: 0.18;" />
+<circle cx="170" cy="170" r="85"  style="stroke: red;stroke-width: 1.7; fill: rgb(17,17, 51);fill-opacity: 0.185;" />
+<circle cx="180" cy="180" r="90"  style="stroke: red;stroke-width: 1.8; fill: rgb(18,18, 54);fill-opacity: 0.19;" />
+<circle cx="190" cy="190" r="95"  style="stroke: red;stroke-width: 1.9; fill: rgb(19,19, 57);fill-opacity: 0.195;" />
+<circle cx="200" cy="200" r="100"  style="stroke: red;stroke-width: 2; fill: rgb(20,20, 60);fill-opacity: 0.2;" />
+<circle cx="210" cy="210" r="105"  style="stroke: red;stroke-width: 2.1; fill: rgb(21,21, 63);fill-opacity: 0.205;" />
+<circle cx="220" cy="220" r="110"  style="stroke: red;stroke-width: 2.2; fill: rgb(22,22, 66);fill-opacity: 0.21;" />
+<circle cx="230" cy="230" r="115"  style="stroke: red;stroke-width: 2.3; fill: rgb(23,23, 69);fill-opacity: 0.215;" />
+<circle cx="240" cy="240" r="120"  style="stroke: red;stroke-width: 2.4; fill: rgb(24,24, 72);fill-opacity: 0.22;" />
+<circle cx="250" cy="250" r="125"  style="stroke: red;stroke-width: 2.5; fill: rgb(25,25, 75);fill-opacity: 0.225;" />
+<circle cx="260" cy="260" r="130"  style="stroke: red;stroke-width: 2.6; fill: rgb(26,26, 78);fill-opacity: 0.23;" />
+<circle cx="270" cy="270" r="135"  style="stroke: red;stroke-width: 2.7; fill: rgb(27,27, 81);fill-opacity: 0.235;" />
+<circle cx="280" cy="280" r="140"  style="stroke: red;stroke-width: 2.8; fill: rgb(28,28, 84);fill-opacity: 0.24;" />
+<circle cx="290" cy="290" r="145"  style="stroke: red;stroke-width: 2.9; fill: rgb(29,29, 87);fill-opacity: 0.245;" />
+<circle cx="300" cy="300" r="150"  style="stroke: red;stroke-width: 3; fill: rgb(30,30, 90);fill-opacity: 0.25;" />
+<circle cx="310" cy="310" r="155"  style="stroke: red;stroke-width: 3.1; fill: rgb(31,31, 93);fill-opacity: 0.255;" />
+<circle cx="320" cy="320" r="160"  style="stroke: red;stroke-width: 3.2; fill: rgb(32,32, 96);fill-opacity: 0.26;" />
+<circle cx="330" cy="330" r="165"  style="stroke: red;stroke-width: 3.3; fill: rgb(33,33, 99);fill-opacity: 0.265;" />
+<circle cx="340" cy="340" r="170"  style="stroke: red;stroke-width: 3.4; fill: rgb(34,34, 102);fill-opacity: 0.27;" />
+<circle cx="350" cy="350" r="175"  style="stroke: red;stroke-width: 3.5; fill: rgb(35,35, 105);fill-opacity: 0.275;" />
+<circle cx="360" cy="360" r="180"  style="stroke: red;stroke-width: 3.6; fill: rgb(36,36, 108);fill-opacity: 0.28;" />
+<circle cx="370" cy="370" r="185"  style="stroke: red;stroke-width: 3.7; fill: rgb(37,37, 111);fill-opacity: 0.285;" />
+<circle cx="380" cy="380" r="190"  style="stroke: red;stroke-width: 3.8; fill: rgb(38,38, 114);fill-opacity: 0.29;" />
+<circle cx="390" cy="390" r="195"  style="stroke: red;stroke-width: 3.9; fill: rgb(39,39, 117);fill-opacity: 0.295;" />
+<circle cx="400" cy="400" r="200"  style="stroke: red;stroke-width: 4; fill: rgb(40,40, 120);fill-opacity: 0.3;" />
+<circle cx="410" cy="410" r="205"  style="stroke: red;stroke-width: 4.1; fill: rgb(41,41, 123);fill-opacity: 0.305;" />
+<circle cx="420" cy="420" r="210"  style="stroke: red;stroke-width: 4.2; fill: rgb(42,42, 126);fill-opacity: 0.31;" />
+<circle cx="430" cy="430" r="215"  style="stroke: red;stroke-width: 4.3; fill: rgb(43,43, 129);fill-opacity: 0.315;" />
+<circle cx="440" cy="440" r="220"  style="stroke: red;stroke-width: 4.4; fill: rgb(44,44, 132);fill-opacity: 0.32;" />
+<circle cx="450" cy="450" r="225"  style="stroke: red;stroke-width: 4.5; fill: rgb(45,45, 135);fill-opacity: 0.325;" />
+<circle cx="460" cy="460" r="230"  style="stroke: red;stroke-width: 4.6; fill: rgb(46,46, 138);fill-opacity: 0.33;" />
+<circle cx="470" cy="470" r="235"  style="stroke: red;stroke-width: 4.7; fill: rgb(47,47, 141);fill-opacity: 0.335;" />
+<circle cx="480" cy="480" r="240"  style="stroke: red;stroke-width: 4.8; fill: rgb(48,48, 144);fill-opacity: 0.34;" />
+<circle cx="490" cy="490" r="245"  style="stroke: red;stroke-width: 4.9; fill: rgb(49,49, 147);fill-opacity: 0.345;" />
 </svg>
