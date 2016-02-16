@@ -16,7 +16,7 @@ public:
 	bool empty() const {
 		return top_ == 0;
 	}
-
+	
 	bool full() const {
 		return top_ == STACK_SIZE;
 	}
@@ -41,14 +41,17 @@ public:
 	}
 };
 
-
 int main() {
 	Stack<int> ist;
 	Stack<double> dst;
+
+	// ist.foo();
+	// dst.foo();
 	
-	for(int i =0 ;i<10; ++i) {
-		ist.push(i*10);
-		dst.push(i*0.01);
+	
+	for(int i=0;i<10; ++i) {
+		ist.push(i*100);
+		dst.push(i*0.1);
 	}
 
 	while(!ist.empty()) {
@@ -60,9 +63,7 @@ int main() {
 		cout << dst.pop() << ' ';
 	}
 	cout << endl;
-	
-	// ist.foo();
-	
+
 	return 0;
 }
 
