@@ -16,39 +16,39 @@ public class Postfix {
 		operations.put(op.getName(), op);
 	}
 
+	public Stack<Double> getContext() {
+		return context;
+	}
+
 	public Operation getOperation(String name) {
 		return operations.get(name);
 	}
 
 	public void interpret(InputStream in) {
 		Scanner scanner = new Scanner(in);
-		while (scanner.hasNextLine()) {
-			String line = scanner.nextLine();
-			String[] tokens = line.split("\\s+");
-			for (String token : tokens) {
-				token = token.trim();
-				if (token.isEmpty()) {
-					continue;
-				}
-				// check for operation <token>
-				if (operations.containsKey(token)) {
-					Operation op = operations.get(token);
-					System.out.println("O: <" + token + ">");
-					op.eval();
-				} else {
-					// try to interpret <token> as double
-					try {
-						double value = Double.parseDouble(token);
-						context.push(value);
-						System.out.println("D: <" + value + ">");
-					} catch (NumberFormatException ex) {
-						// unknown operation
-						// ....
-						System.out.println("Unknown operation <" + token + ">");
-					}
+
+		while (scanner.hasNext()) {
+			String token = scanner.next();
+			// check for operation <token>
+			if (operations.containsKey(token)) {
+				Operation op = operations.get(token);
+				System.out.println("O: <" + token + ">");
+				op.eval();
+			} else {
+				// try to interpret <token> as double
+				try {
+					double value = Double.parseDouble(token);
+					context.push(value);
+					System.out.println("D: <" + value + ">");
+				} catch (NumberFormatException ex) {
+					// unknown operation
+					// ....
+					System.out.println("Unknown operation <" + token + ">");
 				}
 			}
 		}
+
+		scanner.close();
 	}
 
 	public static void main(String[] args) {
