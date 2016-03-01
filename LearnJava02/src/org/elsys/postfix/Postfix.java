@@ -24,9 +24,7 @@ public class Postfix {
 		return operations.get(name);
 	}
 
-	public void interpret(InputStream in) {
-		Scanner scanner = new Scanner(in);
-
+	public void interpret(Scanner scanner) {
 		while (scanner.hasNext()) {
 			String token = scanner.next();
 			// check for operation <token>
@@ -54,6 +52,7 @@ public class Postfix {
 	public static void main(String[] args) {
 		Postfix postfix = new Postfix();
 		postfix.addOperation(new Plus());
-		postfix.interpret(System.in);
+		Scanner scanner = new Scanner(System.in);
+		postfix.interpret(scanner);
 	}
 }
