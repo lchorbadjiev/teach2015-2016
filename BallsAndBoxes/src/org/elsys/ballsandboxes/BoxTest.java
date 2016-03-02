@@ -120,6 +120,7 @@ public class BoxTest {
 	 * have to be overridden and this test helps ensure that remove() is not
 	 * broken in the process.
 	 */
+	@Test
 	public void testRemove() {
 		box.clear();
 		assertFalse(box.remove(b[0]));
