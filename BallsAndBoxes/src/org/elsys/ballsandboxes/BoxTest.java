@@ -67,14 +67,12 @@ public class BoxTest {
 	public void testAdd() {
 		box.clear();
 		for (int i = 0; i < BOX_CAPACITY; i++) {
-			assertEquals("Box.add(Ball) failed to add a new Ball!", true, box.add(b[i]));
-			assertEquals("Box.add(Ball) seems to allow the same Ball to be added twice!", false, box.add(b[i]));
-			assertEquals("Box does not contain a ball after it is supposed to have been added!", true,
-					box.contains(b[i]));
+			assertTrue(box.add(b[i]));
+			assertFalse(box.add(b[i]));
+			assertTrue(box.contains(b[i]));
 		}
 		for (int i = BOX_CAPACITY; i < NUM_BALLS_TO_TEST; i++) {
-			assertEquals("Box.add(Ball) allows a Ball to be added even though it is already full!", false,
-					box.add(b[i]));
+			assertFalse(box.add(b[i]));
 		}
 	}
 
@@ -106,14 +104,13 @@ public class BoxTest {
 			int count = 0;
 			while (it.hasNext() && count < BOX_CAPACITY) {
 				Ball ball = it.next();
-				assertEquals("Balls are not returned by Box.getBallsFromSmallest() iterator in the correct order", true,
-						b[count] == ball);
+				assertEquals(b[count], ball);
 				if (b[count] != ball) {
 					break;
 				}
 				count++;
 			}
-			assertEquals("Box.getBallsFromSmallest() did not return all the balls", BOX_CAPACITY, count);
+			assertEquals(BOX_CAPACITY, count);
 		}
 	}
 
@@ -125,20 +122,18 @@ public class BoxTest {
 	 */
 	public void testRemove() {
 		box.clear();
-		assertEquals("Box.remove(Ball) should fail because box is empty, but it didn't!", false, box.remove(b[0]));
+		assertFalse(box.remove(b[0]));
 		for (int i = 0; i < BOX_CAPACITY; i++) {
 			box.clear();
 			for (int j = 0; j < i; j++) {
 				box.add(b[j]);
 			}
 			for (int j = 0; j < i; j++) {
-				assertEquals("Box.remove(Ball) failed to remove a Ball that is supposed to be inside", true,
-						box.remove(b[j]));
-				assertEquals("Box still contains a ball after it is supposed to have been removed!", false,
-						box.contains(b[j]));
+				assertTrue(box.remove(b[j]));
+				assertFalse(box.contains(b[j]));
 			}
 			for (int j = i; j < NUM_BALLS_TO_TEST; j++) {
-				assertEquals("Box.remove(Ball) did not fail for a Ball that is not inside", false, box.remove(b[j]));
+				assertFalse(box.remove(b[j]));
 			}
 		}
 	}
