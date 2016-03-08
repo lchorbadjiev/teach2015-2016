@@ -109,11 +109,11 @@ public class ManyToOneRelation<M, O> {
 
 ```
 
+
 ## Тестване на методите на `ManyToOneRelation`
 
-При разработването на класа `ManyToOneRelation` да се добавят JUnit тестове на всеки от методите в класа [`ManyToOneRelationTestCase`](https://github.com/lchorbadjiev/teach2015-2016/blob/master/ManyToOne/src/org/elsys/manytoone/ManyToOneRelationTestCase.java). 
+При разработването на `ManyToOneRelation` да се добавят JUnit тестове за всеки от методите в класа [`ManyToOneRelationTestCase`](https://github.com/lchorbadjiev/teach2015-2016/blob/master/ManyToOne/src/org/elsys/manytoone/ManyToOneRelationTestCase.java).
 
-Когато е подходящо за някои от методите да се добавят повече от един тест.
 
 ## Имплементиране на методите `equals` и `hashCode`
 
