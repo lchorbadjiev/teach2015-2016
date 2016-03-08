@@ -1,4 +1,4 @@
-#Реализация на контейнер поддържащ релация many-to-one
+#Задача: контейнер поддържащ релация many-to-one
 
 Настоящото упражнение се базирано върху задачата many-to-one на Кирил Митов [http://lubo.elsys-bg.org/wp-content/uploads/2009/02/manytoone.pdf](http://lubo.elsys-bg.org/wp-content/uploads/2009/02/manytoone.pdf)
 
@@ -7,7 +7,7 @@
 
 Да се имплементира контейнерен клас `ManyToOneRelation` съгласно следната [спецификация](https://github.com/lchorbadjiev/teach2015-2016/blob/master/ManyToOne/src/org/elsys/manytoone/ManyToOneRelation.java):
 
-```
+```java
 package org.elsys.manytoone;
 
 import java.util.Collection;
