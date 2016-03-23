@@ -3,6 +3,7 @@ package org.elsys;
 import java.io.Serializable;
 
 public class Bar implements Serializable {
+	@Ignore
 	private static final long serialVersionUID = 1746958359785602722L;
 
 	private String bar;

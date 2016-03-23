@@ -2,6 +2,7 @@ package org.elsys;
 
 import static org.junit.Assert.*;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -93,7 +94,7 @@ public class BarReflectionTestCase {
 			}
 		}
 	}
-	
+
 	@Test
 	public void testClassCreateInstance() throws Exception {
 		Constructor<Bar> constructor = Bar.class.getConstructor(String.class);
@@ -101,34 +102,49 @@ public class BarReflectionTestCase {
 		Bar bar = constructor.newInstance("hello");
 		assertEquals("hello", bar.getBar());
 	}
-	
+
 	@Test
 	public void testMethodCall() throws Exception {
 		Method method = Bar.class.getMethod("getBar");
 		assertNotNull(method);
-		
+
 		Bar bar = new Bar("bye");
 		assertEquals("bye", method.invoke(bar));
 	}
-	
+
 	@Test
-	public void testFieldValues() {
+	public void testFieldValues() throws Exception {
 		Bar bar = new Bar("hello");
-		
+
 		Field[] fields = Bar.class.getDeclaredFields();
-		
+
 		System.out.println("fields len: " + fields.length);
-		for(Field f: fields) {
+		for (Field f : fields) {
 			System.out.println("field name:" + f.getName());
 			f.setAccessible(true);
-			try {
-				System.out.println("name: " + f.getName() + ", value: " + f.get(bar));
-			} catch (IllegalArgumentException | IllegalAccessException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			System.out.println("name: " + f.getName() + ", value: " + f.get(bar));
+		}
+
+	}
+
+	@Test
+	public void testFieldValuesWithIgnore() throws Exception {
+		// Bar bar = new Bar("hello");
+
+		Field[] fields = Bar.class.getDeclaredFields();
+
+		System.out.println("fields len: " + fields.length);
+		for (Field f : fields) {
+			System.out.println("field name:" + f.getName());
+			f.setAccessible(true);
+			Annotation ignore = f.getAnnotation(Ignore.class);
+			if (ignore != null) {
+				System.out.println("Ignore");
+			} else {
+				System.out.println("Dont Ignore");
 			}
 		}
-		
-		
+
 	}
+
 }
