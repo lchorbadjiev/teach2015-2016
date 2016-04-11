@@ -1,5 +1,8 @@
 #Конструиране на молекули на водата
 
+Based on [Allen B. Downey, The Little Book of Semaphores](http://www.greenteapress.com/semaphores/downey08semaphores.pdf)
+
+
 ## Условие: Building H2O
 
 There are two kinds of threads, oxygen and hydrogen. In order to assemble
