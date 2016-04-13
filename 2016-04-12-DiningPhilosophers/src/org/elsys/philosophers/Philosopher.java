@@ -9,7 +9,7 @@ public class Philosopher extends Thread {
 	private final Fork left;
 	private final Fork right;
 	private int foodCounter = 0;
-	
+
 	private final Random random = new Random();
 
 	private final AtomicBoolean dining = new AtomicBoolean(true);
@@ -36,7 +36,7 @@ public class Philosopher extends Thread {
 	}
 
 	public void eat() {
-		foodCounter ++;
+		foodCounter++;
 		System.out.println(this + " eating!");
 		try {
 			Thread.sleep(random.nextInt(1000));
@@ -49,7 +49,7 @@ public class Philosopher extends Thread {
 	public int getFoodCounter() {
 		return foodCounter;
 	}
-	
+
 	public void finishDining() {
 		dining.set(false);
 	}
@@ -57,11 +57,13 @@ public class Philosopher extends Thread {
 	@Override
 	public void run() {
 		while (dining.get()) {
-			left.pickUp(this);
-			right.pickUp(this);
-			eat();
-			left.putDown(this);
-			right.putDown(this);
+			if (left.pickUp(this)) {
+				if (right.pickUp(this)) {
+					eat();
+					right.putDown(this);
+				}
+				left.putDown(this);
+			}
 			think();
 		}
 

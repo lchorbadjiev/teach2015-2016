@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Application {
 
-	public static final int COUNT = 5;
-	public static final int DINING_TIME = 10_000;
+	public static final int COUNT = 500;
+	public static final int DINING_TIME = 20_000;
 
 	public static void main(String[] args) {
 		ArrayList<Fork> forks = new ArrayList<>();
@@ -32,6 +32,15 @@ public class Application {
 
 		for (Philosopher p : philosophers) {
 			p.finishDining();
+		}
+		
+		for(Philosopher p: philosophers) {
+			try {
+				p.join();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		for (Philosopher p : philosophers) {
