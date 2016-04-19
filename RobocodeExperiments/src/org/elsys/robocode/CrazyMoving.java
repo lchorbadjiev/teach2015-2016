@@ -9,8 +9,10 @@ package org.elsys.robocode;
  */
 
 import robocode.*;
+import robocode.util.Utils;
 
 import java.awt.*;
+import java.awt.geom.Point2D;
 
 /**
  * Crazy - a sample robot by Mathew Nelson.
@@ -28,42 +30,21 @@ public class CrazyMoving extends AdvancedRobot {
 	 */
 	public void run() {
 		// Set colors
-		setBodyColor(new Color(0, 200, 0));
-		setGunColor(new Color(0, 150, 50));
-		setRadarColor(new Color(0, 100, 100));
-		setBulletColor(new Color(255, 255, 100));
-		setScanColor(new Color(255, 200, 200));
+		setBodyColor(Color.PINK);
+
+		setAdjustGunForRobotTurn(true);
+		setAdjustRadarForGunTurn(true);
+		setAdjustRadarForRobotTurn(true);
+
+		setTurnRadarLeft(Double.POSITIVE_INFINITY);
+		setAhead(Double.POSITIVE_INFINITY);
 
 		// Loop forever
 		while (true) {
-			setTurnRadarLeft(40000);
-			// Tell the game we will want to move ahead 40000 -- some large
-			// number
-			setAhead(40000);
-			movingForward = true;
-			// Tell the game we will want to turn right 90
-			setTurnRight(90);
-			// At this point, we have indicated to the game that *when we do
-			// something*,
-			// we will want to move ahead and turn right. That's what "set"
-			// means.
-			// It is important to realize we have not done anything yet!
-			// In order to actually move, we'll want to call a method that
-			// takes real time, such as waitFor.
-			// waitFor actually starts the action -- we start moving and
-			// turning.
-			// It will not return until we have finished turning.
-			waitFor(new TurnCompleteCondition(this));
-			// Note: We are still moving ahead now, but the turn is complete.
-			// Now we'll turn the other way...
-			setTurnLeft(180);
-			// ... and wait for the turn to finish ...
-			waitFor(new TurnCompleteCondition(this));
-			// ... then the other way ...
-			setTurnRight(180);
-			// .. and wait for that turn to finish.
-			waitFor(new TurnCompleteCondition(this));
-			// then back to the top to do it all again
+			if (getGunTurnRemaining() == 0) {
+				setFire(1);
+			}
+			execute();
 		}
 	}
 
@@ -80,10 +61,10 @@ public class CrazyMoving extends AdvancedRobot {
 	 */
 	public void reverseDirection() {
 		if (movingForward) {
-			setBack(40000);
+			setBack(Double.POSITIVE_INFINITY);
 			movingForward = false;
 		} else {
-			setAhead(40000);
+			setAhead(Double.POSITIVE_INFINITY);
 			movingForward = true;
 		}
 	}
@@ -92,11 +73,55 @@ public class CrazyMoving extends AdvancedRobot {
 	 * onScannedRobot: Fire!
 	 */
 	public void onScannedRobot(ScannedRobotEvent e) {
-		System.out.println("bearing: " + e.getBearing());
-		System.out.println("heading: " + e.getHeading());
-		System.out.println("distance: " + e.getDistance());
-		System.out.println("velocity: " + e.getVelocity());
-		// fire(1);
+		// double absoluteBearing = getHeadingRadians() + e.getBearingRadians();
+		// double turnDegrees =
+		// robocode.util.Utils.normalRelativeAngle(absoluteBearing -
+		// getGunHeadingRadians());
+		// setTurnGunRightRadians(turnDegrees);
+
+		double myX = getX();
+		double myY = getY();
+		double absoluteBearing = getHeadingRadians() + e.getBearingRadians();
+		double enemyX = getX() + e.getDistance() * Math.sin(absoluteBearing);
+		double enemyY = getY() + e.getDistance() * Math.cos(absoluteBearing);
+
+		double distance = Point2D.Double.distance(myX, myY, enemyX, enemyY);
+		System.out.println("distance: " + distance);
+		double bulletPower = Math.min(3.0, getEnergy());
+		if (distance > 200) {
+			bulletPower = Math.min(3.0 / (distance / 200.0), getEnergy());
+		}
+		if (distance > 200 && !movingForward) {
+			reverseDirection();
+		} else if (distance < 50 && movingForward) {
+			reverseDirection();
+		}
+		double enemyHeading = e.getHeadingRadians();
+		double enemyVelocity = e.getVelocity();
+
+		double deltaTime = 0;
+		double battleFieldHeight = getBattleFieldHeight(), battleFieldWidth = getBattleFieldWidth();
+		double predictedX = enemyX, predictedY = enemyY;
+
+		double bulletVelocity = 20 - 3 * bulletPower;
+
+		while ((++deltaTime) * bulletVelocity < Point2D.Double.distance(myX, myY, predictedX, predictedY)) {
+			predictedX += Math.sin(enemyHeading) * enemyVelocity;
+			predictedY += Math.cos(enemyHeading) * enemyVelocity;
+			if (predictedX < 18.0 || predictedY < 18.0 || predictedX > battleFieldWidth - 18.0
+					|| predictedY > battleFieldHeight - 18.0) {
+				predictedX = Math.min(Math.max(18.0, predictedX), battleFieldWidth - 18.0);
+				predictedY = Math.min(Math.max(18.0, predictedY), battleFieldHeight - 18.0);
+				break;
+			}
+		}
+		double theta = Utils.normalAbsoluteAngle(Math.atan2(predictedX - getX(), predictedY - getY()));
+
+		setTurnRadarRightRadians(Utils.normalRelativeAngle(absoluteBearing - getRadarHeadingRadians()));
+		setTurnLeft(Utils.normalRelativeAngle(getHeadingRadians() - getRadarHeadingRadians()));
+		setTurnGunRightRadians(Utils.normalRelativeAngle(theta - getGunHeadingRadians()));
+		fire(bulletPower);
+
 	}
 
 	/**
@@ -108,4 +133,11 @@ public class CrazyMoving extends AdvancedRobot {
 			reverseDirection();
 		}
 	}
+
+	@Override
+	public void onRobotDeath(RobotDeathEvent event) {
+		setTurnRadarRightRadians(Double.POSITIVE_INFINITY);
+	}
+	
+	
 }
