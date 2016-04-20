@@ -62,10 +62,6 @@ public class WaterConstructor {
 	private Semaphore oxygenSemaphore = new Semaphore(0);
 	private Semaphore hydrogenSemaphore = new Semaphore(0);
 
-	public WaterConstructor() {
-
-	}
-
 	public void proceedOxygen(Oxygen oxygen) throws Exception {
 		// TODO: implement me
 	}
@@ -83,10 +79,10 @@ public class WaterConstructor {
 		while (true) {
 			if (random.nextInt(3) == 0) {
 				Oxygen o = new Oxygen(++oxygen, constructor);
-				o.start();
+				new Thread(o).start();
 			} else {
 				Hydrogen h = new Hydrogen(++hydrogen, constructor);
-				h.start();
+				new Thread(h).start();
 			}
 			try {
 				Thread.sleep(random.nextInt(1000));
@@ -97,7 +93,6 @@ public class WaterConstructor {
 	}
 }
 
-
 ```
 
 ## Клас `Oxygen`
@@ -105,34 +100,26 @@ public class WaterConstructor {
 ```java
 package org.elsys.water;
 
-public class Oxygen extends Thread {
+public class Oxygen extends Atom implements Runnable {
 
-	private final WaterConstructor constructor;
-
-	private final int oxygenId;
-
-	public Oxygen(int id, WaterConstructor constructor) {
-		this.oxygenId = id;
-		this.constructor = constructor;
+	public Oxygen(int atomId, WaterConstructor constructor) {
+		super(atomId, constructor);
 	}
 
 	@Override
 	public void run() {
 		System.out.println(this + " created");
 		try {
-			constructor.proceedOxygen(this);
+			getConstructor().proceedOxygen(this);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		System.out.println("Water molecule created with " + this);
 	}
 
-	public String toString() {
-		return "Oxygen-" + oxygenId;
-	}
-
-	public void bond() {
-		System.out.println(this + " bonded");
+	@Override
+	public String getFullName() {
+		return "Oxygen";
 	}
 }
 
@@ -143,34 +130,26 @@ public class Oxygen extends Thread {
 ```java
 package org.elsys.water;
 
-public class Hydrogen extends Thread {
+public class Hydrogen extends Atom implements Runnable {
 
-	private final WaterConstructor constructor;
-
-	private final int hydrogenId;
-
-	public Hydrogen(int id, WaterConstructor constructor) {
-		this.hydrogenId = id;
-		this.constructor = constructor;
+	public Hydrogen(int atomId, WaterConstructor constructor) {
+		super(atomId, constructor);
 	}
 
 	@Override
 	public void run() {
 		System.out.println(this + " created");
 		try {
-			constructor.proceedHydrogen(this);
+			getConstructor().proceedHydrogen(this);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		System.out.println("Water molecule created with " + this);
 	}
 
-	public String toString() {
-		return "Hydrogen-" + hydrogenId;
-	}
-
-	public void bond() {
-		System.out.println(this + " bonded");
+	@Override
+	public String getFullName() {
+		return "Hydrogen";
 	}
 }
 ```
