@@ -65,5 +65,6 @@ four
 
 ### Simplest method of integration
 
-![Numerical Integration](https://en.wikipedia.org/wiki/File:Integration_rectangle.svg)
+![Numerical Integration](/images/File-Integration_rectangle.svg)
+
 
