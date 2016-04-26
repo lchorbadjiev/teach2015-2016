@@ -117,3 +117,60 @@ public interface Integrable {
 		integrationTest((x) -> Math.sin(x), 0, Math.PI);
 	}
 ```
+
+
+## Example: Timing utility
+
+### Single method interface `Operation`
+
+```java
+public interface Operation {
+
+	void runOperation();
+}
+```
+
+### Timing operation function
+
+```java
+	private static final double NANO = 1_000_000_000;
+
+	public static void timeOperation(Operation operation) {
+		long startTime = System.nanoTime();
+		operation.runOperation();
+		long endTime = System.nanoTime();
+		double elapsedSeconds = (endTime - startTime) / NANO;
+		System.out.printf("elapsed time: %.3f seconds.%n", elapsedSeconds);
+	}
+```
+
+### Testing utilities
+
+```java
+public class TimingTests {
+
+	public static void main(String[] args) {
+		for (int i = 3; i < 8; i++) {
+			int size = (int) Math.pow(10, i);
+			System.out.printf("Sorting array of length %,d.%n", size);
+			TimingUtils.timeOperation(() -> sortArray(size));
+		}
+	}
+
+	public static double[] randomNums(int length) {
+		double[] nums = new double[length];
+		for (int i = 0; i < length; i++) {
+			nums[i] = Math.random();
+		}
+		return (nums);
+	}
+
+	public static void sortArray(int length) {
+		double[] nums = randomNums(length);
+		Arrays.sort(nums);
+	}
+}
+```
+
+## Summary
+**Code that expects single method interface can use lambdas**
